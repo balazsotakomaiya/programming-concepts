@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>The Dependency Graph of Programming Ideas</title>
+<meta name="description" content="An interactive atlas of programming concepts, laid out as a dependency graph: what each idea rests on, and what it makes possible.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="bar">
+  <div class="mark">atlas<span>/deps</span></div>
+  <input id="q" type="search" placeholder="search concepts…" autocomplete="off" spellcheck="false">
+  <div class="tools">
+    <button class="tool" id="vGraph" aria-pressed="true">graph</button>
+    <button class="tool" id="vList" aria-pressed="false">outline</button>
+    <button class="tool hide-sm" id="zOut">−</button>
+    <button class="tool hide-sm" id="zIn">+</button>
+    <button class="tool" id="fit">fit</button>
+  </div>
+</div>
+
+<div id="viewport">
+  <div id="canvas">
+    <svg id="edges"></svg>
+  </div>
+</div>
+
+<div id="outline"></div>
+
+<aside id="panel"><div class="scroll"><div class="blank">Select a node. You'll get what it rests on, what it makes possible, and the reason on every edge.</div></div></aside>
+
+<div id="err"></div>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
